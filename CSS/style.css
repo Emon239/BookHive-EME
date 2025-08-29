@@ -19,7 +19,7 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: all,2s linear;
+    transition: all 0.2s linear;
     transition: width none;
 
 }
@@ -32,15 +32,25 @@ html{
 
 }
 
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
 html::-webkit-scrollbar-thumb{
     background: var(--black);
 }
+
+
 
 section{
     padding: 5rem 9%;
 }
 
-
+/* ok */
 
 
 .btn{
@@ -61,7 +71,7 @@ section{
     background: var(--dark-color);
 }
 
-
+/* s  */
 
 .header .header-1{
     background: #fff;
@@ -104,7 +114,7 @@ section{
 }
 .header .header-1 .search-form label{
     font-size: 2.5rem;
-    padding-right: 1,5rem;
+    padding-right: 1.5rem;
     color: var(--black);
     cursor: pointer;
 
@@ -157,10 +167,12 @@ section{
     z-index: 1000;
 }
 
+/* ok */
 body{
     height: 300rem;
 
 }
+
 
 .bottom-navbar{
     text-align: center;
@@ -301,18 +313,18 @@ body{
 
 /*image is missing*/
 
-
+/* s  */
 .home{
-    background: url("C:\Users\Mk Computer\OneDrive\Desktop\My Project\Images\background.jpg") no-repeat;
+    background: url("../Images\background.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .home .row{
-    display: flex;
+    display:flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap:1.5rem;
 }
 
 .home .row .content{
@@ -324,6 +336,7 @@ body{
     flex:1 1 42rem;
     text-align: center;
     margin-top: 2rem;
+    position: relative;
 
 }
 
@@ -337,7 +350,7 @@ body{
 
 .home .row .books-slider .stand{
     width: 100%;
-    margin-top: -2rem;
+    margin-top: -25rem;
 
 }
 
@@ -387,7 +400,7 @@ body{
 
 
 
-
+/* s  */
 /* media queries  */
 @media (max-width:991px){
     html{
@@ -398,7 +411,7 @@ body{
     }
 
     section{
-        padding: 3rem 2rem;
+        padding:3rem 2rem;
 
     }
     
@@ -443,13 +456,6 @@ body{
     }
 }
 
-.home .row .content{
-    text-align: center;
-}   
-
-.home .row .content h3{
-    font-size: 3.5rem;
-}
 
 @media (max-width:450px){
     html{
