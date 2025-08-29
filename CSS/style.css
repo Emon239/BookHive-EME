@@ -303,7 +303,7 @@ body{
 
 
 .home{
-    background: url(Images/) no-repeat;
+    background: url("C:\Users\Mk Computer\OneDrive\Desktop\My Project\Images\background.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -320,10 +320,37 @@ body{
 }  
 
 
-.home .row .books-slier{
+.home .row .books-slider{
     flex:1 1 42rem;
     text-align: center;
     margin-top: 2rem;
+
+}
+
+.home .row .books-slider a img{
+    height: 25rem;
+}
+
+.home .row .books-slider a:hover img{
+   transform: scale(.9);
+}
+
+.home .row .books-slider .stand{
+    width: 100%;
+    margin-top: -2rem;
+
+}
+
+.home .row .content h3{
+    font-size: 4.5rem;
+    color: var(--black);
+}
+
+.home .row .content p{
+    font-size: 1.4rem;
+    color: var(--light-color);
+    line-height: 2;
+    padding: 1rem 0;
 
 }
 
@@ -414,6 +441,14 @@ body{
     .header .header-1 .search-form.active{
         top: 115%;
     }
+}
+
+.home .row .content{
+    text-align: center;
+}   
+
+.home .row .content h3{
+    font-size: 3.5rem;
 }
 
 @media (max-width:450px){
