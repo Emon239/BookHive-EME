@@ -36,6 +36,33 @@ html::-webkit-scrollbar-thumb{
     background: var(--black);
 }
 
+section{
+    padding: 5rem 9%;
+}
+
+
+
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--green);
+    font-size: 1.7rem; 
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+
+.btn:hover{
+    background: var(--dark-color);
+}
+
+
+
 .header .header-1{
     background: #fff;
     padding: 1.5rem 9%;
@@ -165,11 +192,17 @@ body{
     background: rgba(255,255,255,.9);
     position: fixed;
     top: 0;
-    left: 0;
+    right: -105%;
     z-index: 10000;
     height: 100%;
     width: 100%;
 
+
+}
+
+.login-form-container.active{
+    right: 0;
+    transition: .3s linear;
 
 }
 
@@ -215,6 +248,87 @@ body{
 
 
 
+.login-form-container form .checkbox{
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+
+}
+
+
+
+
+.login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+
+}
+
+.login-form-container form .btn{
+    text-align: center;
+    width: 100% ;
+    margin: 1.5rem 0;
+
+}
+
+.login-form-container form p{
+    padding-top: .8rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+
+}
+
+.login-form-container form p a{
+    color: var(--green);
+    text-decoration: underline;
+}
+
+
+.login-form-container #close-login-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: var(--black);
+    cursor: pointer;
+
+}
+
+
+
+/*image is missing*/
+
+
+.home{
+    background: url(Images/) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content{
+    flex:1 1 42rem;
+}  
+
+
+.home .row .books-slier{
+    flex:1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+
+}
+
+/*28:05*/
+
 
 
 
@@ -254,6 +368,11 @@ body{
     }
     .header .header-1{
         padding: 2rem;
+    }
+
+    section{
+        padding: 3rem 2rem;
+
     }
     
 }
