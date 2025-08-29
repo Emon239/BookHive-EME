@@ -44,5 +44,263 @@ html::-webkit-scrollbar-thumb{
     justify-content: space-between;
 }
 
+.header .header-1 .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+}
 
+.header .header-1 .logo i{
+    color: var(--green);
+}
+.header .header-1 .search-form{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+
+
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+
+}
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1,5rem;
+    color: var(--black);
+    cursor: pointer;
+
+}
+.header .header-1 .search-form label:hover{
+    color: var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+   font-size: 2.5rem;
+   margin-left: 1.5rem;
+   color: var(--black);
+   cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color: var(--green);
+}
+
+#search-btn{
+    display: none;
+}
+
+.header .header-2{
+    background: var(--green);
+}
+.header .header-2 .navbar{
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+
+}
+
+
+.header .header-2 .navbar a:hover{
+    background: var(--dark-color);
+}
+.header .header-2.active{
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    z-index: 1000;
+}
+
+body{
+    height: 300rem;
+
+}
+
+.bottom-navbar{
+    text-align: center;
+    background: var(--green);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a{
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: #fff;
+
+} 
+
+.bottom-navbar a:hover{
+    background: var(--dark-color);
+}
+
+
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+.login-form-container form{
+    background: #fff;
+    border: var(--border);
+    width:40rem;
+    padding:2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+
+
+}
+
+.login-form-container form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+
+}
+
+.login-form-container form span{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+
+}
+
+.login-form-container form .box{
+
+   width: 100%;
+   margin: .7rem 0;
+   font-size: 1.6rem;
+   border: var(--border);
+   border-radius: .5rem;
+   padding: 1rem 1.2rem;
+   color: var(--black);
+   text-transform: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header .header-1{
+        padding: 2rem;
+    }
+    
+}
+
+@media (max-width:768px){
+
+    html{
+        scroll-padding-top: 0;
+    }
+    body{
+        padding-bottom: 6rem;
+
+    }
+
+    .header .header-2{
+        display: block;
+    }
+    .bottom-navbar{
+        display: block;
+    }
+
+    #search-btn{
+        display: inline-block;
+    }
+    .header .header-1{
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header-1 .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+
+    }
+
+    .header .header-1 .search-form.active{
+        top: 115%;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+   
+}
 
