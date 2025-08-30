@@ -67,7 +67,7 @@ var swiper = new Swiper(".featured-slider", {
   loop: true,
   centeredSlides: true,
   autoplay: {
-    delay: 2500,
+    delay: 3000,
     disableOnInteraction: false,
   },
   navigation: {
@@ -89,3 +89,17 @@ var swiper = new Swiper(".featured-slider", {
     },
   },
 });
+
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.innerText = "✔ Added!";
+    btn.style.background = "#27ae60";
+    setTimeout(() => {
+      btn.innerText = "Add to Cart";
+      btn.style.background = "#219150";
+    }, 1500);
+  });
+});
+
+
+
