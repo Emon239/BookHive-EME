@@ -101,5 +101,61 @@ document.querySelectorAll(".btn").forEach(btn => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".newsletter form");
+    const emailInput = document.querySelector(".newsletter .box");
 
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
+        const email = emailInput.value.trim();
+        const message = document.createElement("p");
+
+        const oldMessage = form.querySelector("p");
+        if (oldMessage) oldMessage.remove();
+
+        if (validateEmail(email)) {
+            message.textContent = "Thank you for subscribing!";
+            message.style.color = "#130f01ff";
+        } else {
+            message.textContent = "Please enter a valid e-mail address";
+            message.style.color = "#e74c3c";
+        }
+
+        message.style.fontSize = "2.5rem"; 
+        message.style.fontWeight = "500"; 
+        message.style.textAlign = "center";
+        message.style.marginTop = "1rem";
+        message.style.fontFamily = "Poppins, sans-serif";
+
+        form.appendChild(message);
+
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+
+        if(validateEmail(email)) emailInput.value = "";
+    });
+
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    emailInput.addEventListener("focus", () => {
+        emailInput.style.boxShadow = "0 0 10px rgba(255,255,255,0.7)";
+        emailInput.style.transition = "0.3s";
+    });
+    emailInput.addEventListener("blur", () => {
+        emailInput.style.boxShadow = "none";
+    });
+
+    const btn = document.querySelector(".newsletter .btn");
+    btn.addEventListener("mouseenter", () => {
+        btn.style.transform = "scale(1.05)";
+        btn.style.transition = "0.3s";
+    });
+    btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "scale(1)";
+    });
+});
