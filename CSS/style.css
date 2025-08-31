@@ -545,6 +545,79 @@ body{
     text-transform: none;
 }
 
+/* Arrivals section styles */
+.arrivals .arrivals-slider{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.arrivals .arrivals-slider .wrapper{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.arrivals .arrivals-slider .box{
+    flex: 1 1 20rem;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.arrivals .arrivals-slider .box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.arrivals .arrivals-slider .box .image{
+    padding: 1rem;
+    background: linear-gradient(15deg,#eee 30%, #fff 30.1%);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+.arrivals .arrivals-slider .box .image img{
+    height: 20rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.arrivals .arrivals-slider .box .content h3{
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.arrivals .arrivals-slider .box .content .price{
+    font-size: 2rem;
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+.arrivals .arrivals-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-decoration: line-through;
+}
+
+.arrivals .arrivals-slider .box .content .stars{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.arrivals .arrivals-slider .box .content .stars i{
+    font-size: 1.4rem;
+    color: #ffd700;
+}
+
 
 
 
