@@ -160,6 +160,27 @@ section{
     color: var(--green);
 }
 
+/* Cart counter styles */
+#cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 #search-btn{
     display: none;
 }
@@ -545,6 +566,48 @@ body{
     text-transform: none;
 }
 
+/* Loading screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader i {
+    font-size: 4rem;
+    color: var(--green);
+    animation: pulse 1.5s infinite;
+}
+
+.loader p {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 /* Arrivals section styles */
 .arrivals .arrivals-slider{
     display: flex;
@@ -616,6 +679,171 @@ body{
 .arrivals .arrivals-slider .box .content .stars i{
     font-size: 1.4rem;
     color: #ffd700;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+/* Quick View Modal */
+.quick-view-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.quick-view-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    color: var(--black);
+}
+
+.modal-body {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+}
+
+.book-image {
+    flex: 0 0 300px;
+}
+
+.book-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.book-details {
+    flex: 1;
+}
+
+.book-details h2 {
+    font-size: 2.4rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.book-details .price {
+    font-size: 2.2rem;
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+.book-details .stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.book-details .stars i {
+    color: #ffd700;
+    font-size: 1.6rem;
+}
+
+.book-details p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--light-color);
+    margin-bottom: 2rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.wishlist-btn {
+    background: #e74c3c;
+}
+
+.wishlist-btn:hover {
+    background: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .book-image {
+        flex: none;
+    }
+    
+    .book-image img {
+        height: 300px;
+    }
 }
 
 
