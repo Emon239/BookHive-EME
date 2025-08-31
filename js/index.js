@@ -1,48 +1,39 @@
-let searchForm=document.querySelector('.search-form');
+let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick=()=>{
+document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
+};
 
-}
-
-// ok 
-let loginForm=document.querySelector('.login-form-container');
-document.querySelector('#login-btn').onclick=()=>{
+// Login form functionality
+let loginForm = document.querySelector('.login-form-container');
+document.querySelector('#login-btn').onclick = () => {
     loginForm.classList.toggle('active');
-}
+};
 
-
-document.querySelector('#close-login-btn').onclick=()=>{
+document.querySelector('#close-login-btn').onclick = () => {
     loginForm.classList.remove('active');
-}
+};
 
-// s 
-window.onscroll=()=>{
-
+// Scroll functionality for header
+window.onscroll = () => {
     searchForm.classList.remove('active');
 
-    if(window.scrollY>80){
+    if (window.scrollY > 80) {
         document.querySelector('.header .header-2').classList.add('active');
-    }
-    else{
+    } else {
         document.querySelector('.header .header-2').classList.remove('active');
     }
-    
-}
+};
 
-
-window.onload=()=>{
-    if(window.scrollY>80){
+window.onload = () => {
+    if (window.scrollY > 80) {
         document.querySelector('.header .header-2').classList.add('active');
-    }
-    else{
+    } else {
         document.querySelector('.header .header-2').classList.remove('active');
     }
-    
-}
-// ok 
+};
 
-var swiper = new Swiper(".books-slider", {
+const booksSwiper = new Swiper(".books-slider", {
   loop: true,
   centeredSlides: true,
   autoplay: {
@@ -62,7 +53,7 @@ var swiper = new Swiper(".books-slider", {
   },
 });
 
-var swiper = new Swiper(".featured-slider", {
+const featuredSwiper = new Swiper(".featured-slider", {
   spaceBetween: 10,
   loop: true,
   centeredSlides: true,
@@ -92,11 +83,20 @@ var swiper = new Swiper(".featured-slider", {
 
 document.querySelectorAll(".btn").forEach(btn => {
   btn.addEventListener("click", () => {
+    // Check if button is already in "Added" state
+    if (btn.innerText === "✔ Added!") {
+      return;
+    }
+    
+    const originalText = btn.innerText;
+    const originalBackground = btn.style.background;
+    
     btn.innerText = "✔ Added!";
     btn.style.background = "#27ae60";
+    
     setTimeout(() => {
-      btn.innerText = "Add to Cart";
-      btn.style.background = "#219150";
+      btn.innerText = originalText;
+      btn.style.background = originalBackground;
     }, 1500);
   });
 });
