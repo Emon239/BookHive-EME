@@ -159,3 +159,144 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.style.transform = "scale(1)";
     });
 });
+
+// Loading screen functionality
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 1500);
+});
+
+// Back to top functionality
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Cart functionality
+let cartCount = 0;
+const cartCountElement = document.querySelector('.cart-count');
+
+// Update cart count
+function updateCartCount() {
+    cartCountElement.textContent = cartCount;
+}
+
+// Add to cart functionality
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if (btn.textContent.includes('Add to Cart')) {
+            cartCount++;
+            updateCartCount();
+            
+            // Show success message
+            const originalText = btn.textContent;
+            btn.textContent = '✔ Added!';
+            btn.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#219150';
+            }, 1500);
+        }
+    });
+});
+
+// Quick View Modal functionality
+const modal = document.getElementById('quick-view-modal');
+const closeModal = document.querySelector('.close-modal');
+
+// Book data for quick view
+const bookData = {
+    'Dark Psychology': {
+        image: 'Images/book1.jpg',
+        price: '$12.99',
+        stars: 5,
+        description: 'A comprehensive guide to understanding human psychology and behavior patterns. Perfect for students and professionals interested in psychological studies.'
+    },
+    'Alice Feeney': {
+        image: 'Images/book2.jpg',
+        price: '$16.99',
+        stars: 4.5,
+        description: 'A thrilling mystery novel by bestselling author Alice Feeney. Full of unexpected twists and psychological suspense.'
+    },
+    'Harry Potter': {
+        image: 'Images/book3.jpg',
+        price: '$25.99',
+        stars: 5,
+        description: 'The magical world of Harry Potter comes alive in this beloved series. A must-read for fantasy lovers of all ages.'
+    },
+    'Eloquent JavaScript': {
+        image: 'Images/book4.jpg',
+        price: '$29.99',
+        stars: 4.5,
+        description: 'Learn JavaScript programming from the ground up with clear explanations and practical examples.'
+    },
+    'HTML and CSS': {
+        image: 'Images/book5.jpg',
+        price: '$17.99',
+        stars: 5,
+        description: 'Master web development fundamentals with this comprehensive guide to HTML and CSS.'
+    }
+};
+
+// Add quick view functionality to book images
+document.querySelectorAll('.featured .box .image img, .arrivals .box .image img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+        e.preventDefault();
+        const bookTitle = img.closest('.box').querySelector('h3').textContent;
+        const data = bookData[bookTitle];
+        
+        if (data) {
+            document.getElementById('modal-book-image').src = data.image;
+            document.getElementById('modal-book-title').textContent = bookTitle;
+            document.getElementById('modal-book-price').textContent = data.price;
+            
+            // Create stars
+            const starsContainer = document.getElementById('modal-book-stars');
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < Math.floor(data.stars); i++) {
+                starsContainer.innerHTML += '<i class="fas fa-star"></i>';
+            }
+            if (data.stars % 1 !== 0) {
+                starsContainer.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            document.getElementById('modal-book-description').textContent = data.description;
+            modal.classList.add('show');
+        }
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+    }
+});
