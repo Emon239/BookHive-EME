@@ -21,7 +21,7 @@
        </a>
 
        <form action="" class="search-form">
-           <input type="search" name="" placeholder="search here...." id="search-box">
+           <input type="search" name="search" placeholder="search here...." id="search-box" aria-label="Search for books">
            <label for="search-box" class="fas fa-search"></label>
        </form>
 
@@ -69,14 +69,14 @@
     <form action="">
         <h3>sign in</h3>
         <span>username</span>
-        <input type="email" name="" class="box" placeholder="enter your email" id="">
+        <input type="email" name="email" class="box" placeholder="enter your email" id="email" required>
         <span>password</span>
-        <input type="password" name="" class="box" placeholder="enter your password" id="">
+        <input type="password" name="password" class="box" placeholder="enter your password" id="password" required>
         <div class="checkbox">
-            <input type="checkbox" name="" id="remember-me">
+            <input type="checkbox" name="remember" id="remember-me">
             <label for="remember-me">remember me</label>
         </div>
-        <input type="submit" value="sign in" class="btn">
+        <input type="submit" value="sign in" class="btn" name="submit">
         <p>forget password? <a href="#">click here</a></p>
         <p>don't have an account? <a href="#">create one</a></p>
     </form>
@@ -99,7 +99,7 @@
         <div class="swiper books-slider">
             <div class="swiper-wrapper">
                 <a href="#" class="swiper-slide"><img src="Images/book1.jpg" alt=""></a>
-                <a href="#" class ="swiper-slide"><img src="Images/book2.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="Images/book2.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book3.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book4.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book5.jpg" alt=""></a>
@@ -327,14 +327,14 @@
 <section class="newsletter">
     <form action="">
         <h3>Subscribe for latest updates</h3>
-        <input type="email" name="" placeholder="Enter your e-mail address" id="" class="box">
-        <input type="submit" value="Subscribe" class="btn">
+        <input type="email" name="newsletter_email" placeholder="Enter your e-mail address" id="newsletter-email" class="box" required>
+        <input type="submit" value="Subscribe" class="btn" name="newsletter_submit">
     </form>
 </section>
 
 <!-- newsletter section ends  -->
 
-<!-- arribals selection starts -->
+<!-- arrivals section starts -->
 
 <section class="arrivals" id="arrivals">
     <h1 class="heading"> <span>new arrivals</span></h1>
@@ -509,7 +509,7 @@
     </div>
 
 </section>
-<!-- arribals selection end -->
+<!-- arrivals section ends -->
 
 
 
