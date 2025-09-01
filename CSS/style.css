@@ -663,6 +663,66 @@ body{
 
 
 
+.review {
+  padding: 5rem 2rem;
+  background: #f9f9f9;
+}
+
+.review .heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.review .review-slider .box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.review .review-slider .box:hover {
+  transform: translateY(-8px);
+}
+
+.review .review-slider .box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;   /* circle profile */
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #4CAF50;
+}
+
+.review .review-slider .box h3 {
+  font-size: 1.6rem;
+  color: #222;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.review .review-slider .box p {
+  font-size: 1.4rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.review .review-slider .box .stars i {
+  font-size: 1.5rem;
+  color: #FFD700; /* golden stars */
+  margin: 0 0.1rem;
+}
+
+
+
+
 
 
 
