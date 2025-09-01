@@ -39,7 +39,20 @@ window.onload=()=>{
         document.querySelector('.header .header-2').classList.remove('active');
     }
     
+
+    fadeOut();
 }
+
+
+function loader(){
+  document.querySelector('.loader-container').classList.add('active');
+}
+
+function fadeOut(){
+  setTimeout(loader, 4000);
+}
+
+
 // ok 
 
 var swiper = new Swiper(".books-slider", {
