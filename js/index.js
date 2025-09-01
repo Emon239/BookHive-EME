@@ -90,9 +90,10 @@ var swiper = new Swiper(".featured-slider", {
   },
 });
 
-document.querySelectorAll(".btn").forEach(btn => {
+document.querySelectorAll(".cart-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     btn.innerText = "✔ Added!";
+    alert('This book is added to cart');
     btn.style.background = "#27ae60";
     setTimeout(() => {
       btn.innerText = "Add to Cart";
