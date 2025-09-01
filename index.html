@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader">
+            <i class="fas fa-book-open"></i>
+            <p>Loading Book Store...</p>
+        </div>
+    </div>
 
 <!---header section--->
 <header class="header">
@@ -21,7 +28,7 @@
        </a>
 
        <form action="" class="search-form">
-           <input type="search" name="" placeholder="search here...." id="search-box">
+           <input type="search" name="search" placeholder="search here...." id="search-box" aria-label="Search for books">
            <label for="search-box" class="fas fa-search"></label>
        </form>
 
@@ -29,7 +36,9 @@
        <div class="icons">
         <div id="search-btn" class="fas fa-search"></div>
         <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-shopping-cart" id="cart-icon">
+            <span class="cart-count">0</span>
+        </a>
         <div id="login-btn" class="fas fa-user"></div>
 
 
@@ -69,14 +78,14 @@
     <form action="">
         <h3>sign in</h3>
         <span>username</span>
-        <input type="email" name="" class="box" placeholder="enter your email" id="">
+        <input type="email" name="email" class="box" placeholder="enter your email" id="email" required>
         <span>password</span>
-        <input type="password" name="" class="box" placeholder="enter your password" id="">
+        <input type="password" name="password" class="box" placeholder="enter your password" id="password" required>
         <div class="checkbox">
-            <input type="checkbox" name="" id="remember-me">
+            <input type="checkbox" name="remember" id="remember-me">
             <label for="remember-me">remember me</label>
         </div>
-        <input type="submit" value="sign in" class="btn">
+        <input type="submit" value="sign in" class="btn" name="submit">
         <p>forget password? <a href="#">click here</a></p>
         <p>don't have an account? <a href="#">create one</a></p>
     </form>
@@ -99,7 +108,7 @@
         <div class="swiper books-slider">
             <div class="swiper-wrapper">
                 <a href="#" class="swiper-slide"><img src="Images/book1.jpg" alt=""></a>
-                <a href="#" class ="swiper-slide"><img src="Images/book2.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="Images/book2.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book3.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book4.jpg" alt=""></a>
                 <a href="#" class="swiper-slide"><img src="Images/book5.jpg" alt=""></a>
@@ -327,26 +336,42 @@
 <section class="newsletter">
     <form action="">
         <h3>Subscribe for latest updates</h3>
-        <input type="email" name="" placeholder="Enter your e-mail address" id="" class="box">
-        <input type="submit" value="Subscribe" class="btn">
+        <input type="email" name="newsletter_email" placeholder="Enter your e-mail address" id="newsletter-email" class="box" required>
+        <input type="submit" value="Subscribe" class="btn" name="newsletter_submit">
     </form>
 </section>
 
 <!-- newsletter section ends  -->
 
-<!-- arribals selection starts -->
+<!-- arrivals section starts -->
 
 <section class="arrivals" id="arrivals">
     <h1 class="heading"> <span>new arrivals</span></h1>
-    <div class="swiper arrivals-slider">
-        <div class="swiper-wrapper">
-                 <a href="#" class="swiper-slide box">
+    <div class="arrivals-slider">
+        <div class="wraper">
+                 <a href="#" class="box">
                     <div class="image">
-                        <img src="Images/book1.jpg" alt="">
+                        <img src="Images/book1.jpg" alt="Dark Psychology Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>Dark Psychology</h3>
+                        <div class="price">$12.99 <span>$17.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                 </a>
+                 <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="Images/book2.jpg" alt="Alice Feeney Book Cover">
+                    </div>
+                    <div class="content">
+                        <h3>Alice Feeney</h3>
+                        <div class="price">$16.99 <span>$21.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -358,11 +383,27 @@
                  </a>
                  <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="Images/book2.jpg" alt="">
+                        <img src="Images/book3.jpg" alt="Harry Potter Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>Harry Potter</h3>
+                        <div class="price">$25.99 <span>$30.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                 </a>
+                 <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="Images/book4.jpg" alt="Eloquent JavaScript Book Cover">
+                    </div>
+                    <div class="content">
+                        <h3>Eloquent JavaScript</h3>
+                        <div class="price">$29.99 <span>$34.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -374,64 +415,48 @@
                  </a>
                  <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="Images/book3.jpg" alt="">
+                        <img src="Images/book5.jpg" alt="HTML and CSS Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>HTML and CSS</h3>
+                        <div class="price">$17.99 <span>$22.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                 </a>
-                 <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="Images/book4.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
-                        <div class="stars">
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                 </a>
-                 <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="Images/book5.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                  </a>
         </div>
     </div>
 
-    <div class="swiper arrivals-slider">
-        <div class="swiper-wrapper">
-                 <a href="#" class="swiper-slide box">
+    <div class="arrivals-slider">
+        <div class="wraper">
+                 <a href="#" class="box">
                     <div class="image">
-                        <img src="Images/book6.jpg" alt="">
+                        <img src="Images/book6.jpg" alt="Dreyer's English Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>Dreyer's English</h3>
+                        <div class="price">$14.99 <span>$19.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                 </a>
+                 <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="Images/book7.jpg" alt="Computer Studies Book Cover">
+                    </div>
+                    <div class="content">
+                        <h3>Computer Studies</h3>
+                        <div class="price">$29.99 <span>$34.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -443,11 +468,27 @@
                  </a>
                  <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="Images/book7.jpg" alt="">
+                        <img src="Images/book8.jpg" alt="Computer Science Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>Computer Science</h3>
+                        <div class="price">$31.99 <span>$36.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                 </a>
+                 <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="Images/book9.jpg" alt="Technology and Society Book Cover">
+                    </div>
+                    <div class="content">
+                        <h3>Technology and Society</h3>
+                        <div class="price">$28.99 <span>$33.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -459,49 +500,17 @@
                  </a>
                  <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="Images/book8.jpg" alt="">
+                        <img src="Images/book10.jpg" alt="IT Tools and Application Book Cover">
                     </div>
                     <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
+                        <h3>IT Tools and Application</h3>
+                        <div class="price">$19.99 <span>$24.99</span></div>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                 </a>
-                 <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="Images/book9.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
-                        <div class="stars">
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                 </a>
-                 <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="Images/book10.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">$15.90 <span>$20.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                  </a>
@@ -509,13 +518,40 @@
     </div>
 
 </section>
-<!-- arribals selection end -->
+<!-- arrivals section ends -->
 
 
 
 
 
 
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="book-image">
+                    <img id="modal-book-image" src="" alt="">
+                </div>
+                <div class="book-details">
+                    <h2 id="modal-book-title"></h2>
+                    <div class="price" id="modal-book-price"></div>
+                    <div class="stars" id="modal-book-stars"></div>
+                    <p id="modal-book-description"></p>
+                    <div class="modal-actions">
+                        <button class="btn add-to-cart-modal">Add to Cart</button>
+                        <button class="btn wishlist-btn">Add to Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
