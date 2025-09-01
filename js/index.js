@@ -217,3 +217,66 @@ var swiper = new Swiper(".arrivals-slider", {
       768: { slidesPerView: 2 },
     },
   });
+
+
+  // footer script
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const footerLinks = document.querySelectorAll(".footer .box a");
+  footerLinks.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+      link.style.color = "#27ae60"; 
+      link.style.transition = "0.3s";
+    });
+    link.addEventListener("mouseleave", () => {
+      link.style.color = "var(--light-color)";
+    });
+  });
+
+  const socialIcons = document.querySelectorAll(".footer .share a");
+  socialIcons.forEach(icon => {
+    icon.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Redirecting to: " + icon.className.split(" ")[1].replace("fa-", ""));
+ 
+    });
+  });
+
+  const credit = document.querySelector(".footer .credit");
+  const year = new Date().getFullYear();
+  credit.innerHTML = `Created by <span>Emon, Mehedi, Ema</span> | &copy; ${year} All rights reserved!`;
+
+  const scrollBtn = document.createElement("button");
+  scrollBtn.innerHTML = "↑";
+  scrollBtn.id = "scrollTopBtn";
+  document.body.appendChild(scrollBtn);
+
+  scrollBtn.style.position = "fixed";
+  scrollBtn.style.bottom = "20px";
+  scrollBtn.style.right = "20px";
+  scrollBtn.style.padding = "10px 15px";
+  scrollBtn.style.border = "none";
+  scrollBtn.style.borderRadius = "50%";
+  scrollBtn.style.background = "#27ae60";
+  scrollBtn.style.color = "#fff";
+  scrollBtn.style.fontSize = "18px";
+  scrollBtn.style.cursor = "pointer";
+  scrollBtn.style.display = "none";
+  scrollBtn.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+  scrollBtn.style.transition = "0.3s";
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+});
