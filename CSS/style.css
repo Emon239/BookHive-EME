@@ -904,6 +904,11 @@ body{
     height: 10rem;
 }
 
+/* Hide scrollbar when loader is active */
+body.loader-active {
+    overflow: hidden;
+}
+
 
 
 
