@@ -227,8 +227,7 @@ section{
 
 /* Body height for scrolling */
 body{
-    height: 300rem;
-
+    min-height: 100vh;
 }
 
 
@@ -668,7 +667,7 @@ body{
 }
 .deal .content .p{
     padding: 1rem 0;
-    color: var(--linet-color);
+    color: var(--light-color);
     font-size: 1.4rem;
     line-height: 2;
 }
