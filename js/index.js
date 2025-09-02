@@ -55,7 +55,7 @@ function fadeOut(){
 
 // ok 
 
-var swiper = new Swiper(".books-slider", {
+var booksSwiper = new Swiper(".books-slider", {
   loop: true,
   centeredSlides: true,
   autoplay: {
@@ -75,7 +75,7 @@ var swiper = new Swiper(".books-slider", {
   },
 });
 
-var swiper = new Swiper(".featured-slider", {
+var featuredSwiper = new Swiper(".featured-slider", {
   spaceBetween: 10,
   loop: true,
   centeredSlides: true,
@@ -104,13 +104,33 @@ var swiper = new Swiper(".featured-slider", {
 });
 
 document.querySelectorAll(".cart-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
     btn.innerText = "✔ Added!";
-    alert('This book is added to cart');
     btn.style.background = "#27ae60";
+    
+    // Show a more user-friendly notification instead of alert
+    const notification = document.createElement('div');
+    notification.textContent = 'Book added to cart!';
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #27ae60;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      z-index: 10000;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    `;
+    document.body.appendChild(notification);
+    
     setTimeout(() => {
       btn.innerText = "Add to Cart";
       btn.style.background = "#219150";
+      notification.remove();
     }, 1500);
   });
 });
@@ -174,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-var swiper = new Swiper(".arrivals-slider", {
+var arrivalsSwiper = new Swiper(".arrivals-slider", {
     slidesPerView: 3,        // show 3 books at a time
     spaceBetween: 20,        // gap between books
     loop: true,              // infinite loop
@@ -193,7 +213,7 @@ var swiper = new Swiper(".arrivals-slider", {
     }
   });
 
-  var swiper = new Swiper(".review-slider", {
+  var reviewSwiper = new Swiper(".review-slider", {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
@@ -213,7 +233,7 @@ var swiper = new Swiper(".arrivals-slider", {
     },
   });
 
-   var swiper = new Swiper(".blogs-container", {
+   var blogsSwiper = new Swiper(".blogs-container", {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
