@@ -72,8 +72,8 @@ section{
 .heading span{
     font-size: 3rem;
     padding: .5rem 2rem;
-    color: var(--black);
-    background-color: #fff;
+    color: #fff;
+    background-color: var(--green);
     border: var(--border);
 }
 
