@@ -1,6 +1,6 @@
 📚 Online Book Store Website
 
-An online bookstore web application where users can browse, search, and explore books from different categories. Built with HTML, CSS, JavaScript
+ An online bookstore web application where users can browse, search, and explore books from different categories. Built with HTML, CSS, JavaScript
 
 
 
@@ -13,7 +13,7 @@ An online bookstore web application where users can browse, search, and explore 
 
 ---
 
-  🛠️ Tech Stack
+🛠️ Tech Stack
 Frontend:** HTML, CSS, JavaScript  
 Icons & Fonts:** Font Awesome, Google Fonts  
 Version Control:** Git & GitHub  
@@ -27,8 +27,6 @@ https://emon239.github.io/BookHive-EME/
 👨‍💻 Authors
 
 Emon
-
 Mehedi
-
 Ema
 
