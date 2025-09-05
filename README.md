@@ -99,17 +99,17 @@ Key files:
 ---
 
 ### 👥 Contributors
-- **Emon**
+- **Emon Shah**
   
-  <img src="Images/pic1.jpg" alt="Emon" width="100" style="border-radius:50%; margin:6px;"/>
+  <img src="Images/pic1.jpg" alt="Emon Shah" width="100" style="border-radius:50%; margin:6px;"/>
 
-- **Mehedi**
+- **Mehedi Hasan**
   
-  <img src="Images/pic3.jpg" alt="Mehedi" width="100" style="border-radius:50%; margin:6px;"/>
+  <img src="Images/pic3.jpg" alt="Mehedi Hasan" width="100" style="border-radius:50%; margin:6px;"/>
 
-- **Ema**
+- **Afroja Akhter Ema**
   
-  <img src="Images/pic2.jpg" alt="Ema" width="100" style="border-radius:50%; margin:6px;"/>
+  <img src="Images/pic2.jpg" alt="Afroja Akhter Ema" width="100" style="border-radius:50%; margin:6px;"/>
 
 ### 📈 Credits
 Icons by Font Awesome. Typography by Google Fonts. Sliders by Swiper.
